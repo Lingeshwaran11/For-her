@@ -81,8 +81,8 @@ openBtn.addEventListener("click", function (e) {
       });
 
     startBalloons();
-    startConfetti();
-    startFireworks();
+    //startConfetti();
+    //startFireworks();
     animationTimeline();
   }, 800);
 });
