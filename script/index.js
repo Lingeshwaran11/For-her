@@ -564,7 +564,7 @@ function setupAudioAnalysis(stream) {
       }
       const average = sum / dataArray.length;
 
-      if (average > 35) {
+      if (average > 25) {
         stopMicrophoneDetection();
         blowCandles();
         return;
@@ -607,8 +607,8 @@ function blowCandles() {
   }, 800);
 }
 
-// Balloons effect
-function startBalloons() {
+// Balloons effect old
+/*function startBalloons() {
   setInterval(() => {
     const heart = document.createElement("div");
     heart.className = "balloon";
@@ -617,12 +617,34 @@ function startBalloons() {
     heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
 
     heart.style.left = Math.random() * 100 + "%";
-    heart.style.animationDuration = 12 + Math.random() * 8 + "s";
+    heart.style.animationDuration = 8 + Math.random() * 4 + "s";
 
     document.body.appendChild(heart);
 
-    setTimeout(() => heart.remove(), 15000);
-  }, 1200);
+    setTimeout(() => heart.remove(), 12000);
+  }, 600);
+}old*/
+
+function startBalloons() {
+  for (let i = 0; i < 10; i++) {
+    createHeart();
+  }
+
+  setInterval(createHeart, 800);
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "balloon";
+
+  const hearts = ["❤️", "💖", "💕", "💗", "💘"];
+  heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+
+  heart.style.left = Math.random() * 100 + "%";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 15000);
 }
 
 // Confetti effect
