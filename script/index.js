@@ -627,7 +627,7 @@ function blowCandles() {
 
 function startBalloons() {
   setInterval(() => {
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 1; i++) {
       const heart = document.createElement("div");
       heart.className = "balloon";
 
