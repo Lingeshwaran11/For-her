@@ -197,8 +197,8 @@ color:yellow
 }
 
 .birthday-card {
-  width: 420px;
-  height: 550px;
+  width: 440px;
+  height: 580px;
   position: relative;
   transform-style: preserve-3d;
   cursor: url("./img/birthday-candle.png") 6 2, pointer;

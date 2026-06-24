@@ -626,25 +626,22 @@ function blowCandles() {
 }old*/
 
 function startBalloons() {
-  for (let i = 0; i < 10; i++) {
-    createHeart();
-  }
+  setInterval(() => {
+    for (let i = 0; i < 3; i++) {
+      const heart = document.createElement("div");
+      heart.className = "balloon";
 
-  setInterval(createHeart, 800);
-}
+      const hearts = ["❤️", "💖", "💕", "💗", "💘"];
+      heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
 
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.className = "balloon";
+      heart.style.left = Math.random() * 100 + "%";
+      heart.style.animationDuration = 6 + Math.random() * 4 + "s";
 
-  const hearts = ["❤️", "💖", "💕", "💗", "💘"];
-  heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+      document.body.appendChild(heart);
 
-  heart.style.left = Math.random() * 100 + "%";
-
-  document.body.appendChild(heart);
-
-  setTimeout(() => heart.remove(), 15000);
+      setTimeout(() => heart.remove(), 10000);
+    }
+  }, 500);
 }
 
 // Confetti effect
