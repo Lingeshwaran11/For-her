@@ -6,14 +6,55 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: #1a1a1a;
+  /*background: #1a1a1a;*/
+  /*background: linear-gradient(
+    135deg,
+   #1a1a1a,
+    #2a003f,
+    #4b0036
+  );*/
+  background:
+radial-gradient(circle at top, #3b1a5a 0%, #150021 40%, #000000 100%);
   color: #eaeaea;
   overflow-x: hidden;
   overflow-y: hidden;
   min-height: 100vh;
   cursor: url("./img/birthday-cake.png") 8 8, auto;
+  position: relative;
 
   
+}
+.timeline-container,
+.card-overlay,
+.preloader,
+.music-control {
+  position: relative;
+  z-index: 1;
+}
+.star {
+  position: fixed;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+
+  box-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 15px #fff;
+
+  animation: blink 3s infinite;
+}
+
+@keyframes blink {
+  0%,100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 .idea-6{
     position:relative;
@@ -838,4 +879,5 @@ color:yellow
   .wish-hbd {
     font-size: 3rem;
   }
+
 }
